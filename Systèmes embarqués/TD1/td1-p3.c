@@ -9,13 +9,14 @@ char gest_clav(void)
 	int ligne=0;
 	int nb_lignes = sizeof(masques)/sizeof(unsigned char);
 	unsigned char lecture;
-	unsigned char colonnes[]={0b0110,0b0101,0b0011};
+	unsigned char colonnes[]={0b1110,0b1101,0b1011,0b0111};
 	int nb_colonnes = sizeof(colonnes)/sizeof(unsigned char);
 	int colonne;
-	char clavier[4][3]={ {'1','2','3'},
-						{'4','5','6'},
-						{'7','8','9'},
-						{'*','0','#'} 
+	char clavier[4][4]={{'C','0','=', '+'},
+						{'1','2','3', '-'},	
+						{'4','5','6', '*'},
+						{'7','8','9','/'}						
+
 	};
 	char touche=0;
 
@@ -47,6 +48,6 @@ TRISD=0xF0;
 
 while(1)
 	{	
-		PORTB=gest_clav();
+		PORTB= gest_clav();
 	}	
 }

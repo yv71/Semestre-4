@@ -1,5 +1,5 @@
 MPLINK 4.33, Linker
-Linker Map File - Created Mon Jan 28 17:00:34 2019
+Linker Map File - Created Mon Feb 04 16:27:51 2019
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -9,19 +9,19 @@ Linker Map File - Created Mon Jan 28 17:00:34 2019
                low_vector       code   0x000018    program   0x000006
                     reset       code   0x001000    program   0x000006
                    .cinit    romdata   0x00102a    program   0x000002
-           .code_td1-p3.o       code   0x00102c    program   0x000236
-               _cinit_scn       code   0x001262    program   0x00009e
-                     PROG       code   0x001300    program   0x00005a
-             _startup_scn       code   0x00135a    program   0x00001c
-                    .code       code   0x001376    program   0x00000e
-           .code___init.o       code   0x001384    program   0x000002
-        .idata_td1-p3.o_i    romdata   0x001386    program   0x000000
-        .romdata_td1-p3.o    romdata   0x001386    program   0x000000
-            .code_c018i.o       code   0x001386    program   0x000000
-         .romdata_c018i.o    romdata   0x001386    program   0x000000
-        .idata___init.o_i    romdata   0x001386    program   0x000000
-        .romdata___init.o    romdata   0x001386    program   0x000000
-         .idata_c018i.o_i    romdata   0x001386    program   0x000000
+           .code_td1-p3.o       code   0x00102c    program   0x000264
+               _cinit_scn       code   0x001290    program   0x00009e
+                     PROG       code   0x00132e    program   0x00005a
+             _startup_scn       code   0x001388    program   0x00001c
+                    .code       code   0x0013a4    program   0x00000e
+           .code___init.o       code   0x0013b2    program   0x000002
+        .idata_td1-p3.o_i    romdata   0x0013b4    program   0x000000
+        .romdata_td1-p3.o    romdata   0x0013b4    program   0x000000
+            .code_c018i.o       code   0x0013b4    program   0x000000
+         .romdata_c018i.o    romdata   0x0013b4    program   0x000000
+        .idata___init.o_i    romdata   0x0013b4    program   0x000000
+        .romdata___init.o    romdata   0x0013b4    program   0x000000
+         .idata_c018i.o_i    romdata   0x0013b4    program   0x000000
                 MATH_DATA      udata   0x000000       data   0x000014
                  .tmpdata      udata   0x000014       data   0x000004
            .udata_c018i.o      udata   0x000060       data   0x00000a
@@ -42,39 +42,39 @@ Linker Map File - Created Mon Jan 28 17:00:34 2019
                             0x000008    0x00000d      
                             0x000018    0x00001d      
                             0x001000    0x001005      
-                            0x00102a    0x001385      
-            884 out of 31000 program addresses used, program memory utilization is 2%
+                            0x00102a    0x0013b3      
+            930 out of 31000 program addresses used, program memory utilization is 3%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                 FXM1616S   0x001300    program     extern C:\MCC18\src\traditional\math\fxm1616s.asm
-               TSIGN1616A   0x00134c    program     static C:\MCC18\src\traditional\math\fxm1616s.asm
+                 FXM1616S   0x00132e    program     extern C:\MCC18\src\traditional\math\fxm1616s.asm
+               TSIGN1616A   0x00137a    program     static C:\MCC18\src\traditional\math\fxm1616s.asm
        ___return_lbl00000   0x000004    program     static                          
        ___return_lbl00000   0x001004    program     static                          
-       ___return_lbl00001   0x001374    program     static                          
+       ___return_lbl00001   0x0013a2    program     static                          
        ___return_lbl00001   0x00000c    program     static                          
        ___return_lbl00002   0x00001c    program     static                          
-       ___return_lbl00002   0x0012fe    program     static                          
-                   __init   0x001384    program     extern C:\MCC18\src\traditional\stdclib\__init.c
-            __zero_memory   0x001376    program     extern C:\MCC18\src\traditional\proc\p18F4550.asm
-                _do_cinit   0x001262    program     extern C:\MCC18\src\traditional\startup\c018i.c
+       ___return_lbl00002   0x00132c    program     static                          
+                   __init   0x0013b2    program     extern C:\MCC18\src\traditional\stdclib\__init.c
+            __zero_memory   0x0013a4    program     extern C:\MCC18\src\traditional\proc\p18F4550.asm
+                _do_cinit   0x001290    program     extern C:\MCC18\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern C:\MCC18\src\traditional\startup\c018i.c
                    _reset   0x001000    program     extern C:\Users\yv066840\Desktop\TD1\remap.h
-                 _startup   0x00135a    program     extern C:\MCC18\src\traditional\startup\c018i.c
-               clear_loop   0x00137c    program     static C:\MCC18\src\traditional\proc\p18F4550.asm
-                copy_loop   0x0012d4    program     static                          
-            copy_one_byte   0x0012da    program     static                          
-                     done   0x0012fe    program     static                          
-             done_copying   0x0012e8    program     static                          
+                 _startup   0x001388    program     extern C:\MCC18\src\traditional\startup\c018i.c
+               clear_loop   0x0013aa    program     static C:\MCC18\src\traditional\proc\p18F4550.asm
+                copy_loop   0x001302    program     static                          
+            copy_one_byte   0x001308    program     static                          
+                     done   0x00132c    program     static                          
+             done_copying   0x001316    program     static                          
                 gest_clav   0x00102c    program     extern C:\Users\yv066840\Desktop\TD1\td1-p3.c
  interrupt_at_high_vector   0x000008    program     extern C:\Users\yv066840\Desktop\TD1\remap.h
   interrupt_at_low_vector   0x000018    program     extern C:\Users\yv066840\Desktop\TD1\remap.h
-                     loop   0x00136a    program     static                          
-                     main   0x001250    program     extern C:\Users\yv066840\Desktop\TD1\td1-p3.c
-                     test   0x00127c    program     static                          
+                     loop   0x001398    program     static                          
+                     main   0x00127e    program     extern C:\Users\yv066840\Desktop\TD1\td1-p3.c
+                     test   0x0012aa    program     static                          
                    ADCON0   0x000fc2       data     extern C:\MCC18\src\traditional\proc\p18F4550.asm
                ADCON0bits   0x000fc2       data     extern C:\MCC18\src\traditional\proc\p18F4550.asm
                    ADCON1   0x000fc1       data     extern C:\MCC18\src\traditional\proc\p18F4550.asm
@@ -369,22 +369,22 @@ Linker Map File - Created Mon Jan 28 17:00:34 2019
                    _reset   0x001000    program     extern C:\Users\yv066840\Desktop\TD1\remap.h
        ___return_lbl00000   0x001004    program     static                          
                 gest_clav   0x00102c    program     extern C:\Users\yv066840\Desktop\TD1\td1-p3.c
-                     main   0x001250    program     extern C:\Users\yv066840\Desktop\TD1\td1-p3.c
-                _do_cinit   0x001262    program     extern C:\MCC18\src\traditional\startup\c018i.c
-                     test   0x00127c    program     static                          
-                copy_loop   0x0012d4    program     static                          
-            copy_one_byte   0x0012da    program     static                          
-             done_copying   0x0012e8    program     static                          
-                     done   0x0012fe    program     static                          
-       ___return_lbl00002   0x0012fe    program     static                          
-                 FXM1616S   0x001300    program     extern C:\MCC18\src\traditional\math\fxm1616s.asm
-               TSIGN1616A   0x00134c    program     static C:\MCC18\src\traditional\math\fxm1616s.asm
-                 _startup   0x00135a    program     extern C:\MCC18\src\traditional\startup\c018i.c
-                     loop   0x00136a    program     static                          
-       ___return_lbl00001   0x001374    program     static                          
-            __zero_memory   0x001376    program     extern C:\MCC18\src\traditional\proc\p18F4550.asm
-               clear_loop   0x00137c    program     static C:\MCC18\src\traditional\proc\p18F4550.asm
-                   __init   0x001384    program     extern C:\MCC18\src\traditional\stdclib\__init.c
+                     main   0x00127e    program     extern C:\Users\yv066840\Desktop\TD1\td1-p3.c
+                _do_cinit   0x001290    program     extern C:\MCC18\src\traditional\startup\c018i.c
+                     test   0x0012aa    program     static                          
+                copy_loop   0x001302    program     static                          
+            copy_one_byte   0x001308    program     static                          
+             done_copying   0x001316    program     static                          
+                     done   0x00132c    program     static                          
+       ___return_lbl00002   0x00132c    program     static                          
+                 FXM1616S   0x00132e    program     extern C:\MCC18\src\traditional\math\fxm1616s.asm
+               TSIGN1616A   0x00137a    program     static C:\MCC18\src\traditional\math\fxm1616s.asm
+                 _startup   0x001388    program     extern C:\MCC18\src\traditional\startup\c018i.c
+                     loop   0x001398    program     static                          
+       ___return_lbl00001   0x0013a2    program     static                          
+            __zero_memory   0x0013a4    program     extern C:\MCC18\src\traditional\proc\p18F4550.asm
+               clear_loop   0x0013aa    program     static C:\MCC18\src\traditional\proc\p18F4550.asm
+                   __init   0x0013b2    program     extern C:\MCC18\src\traditional\stdclib\__init.c
                      SIGN   0x000000       data     extern C:\MCC18\src\traditional\math\cmath18.asm
                 __FPFLAGS   0x000001       data     extern C:\MCC18\src\traditional\math\cmath18.asm
             __FPFLAGSbits   0x000001       data     extern C:\MCC18\src\traditional\math\cmath18.asm
