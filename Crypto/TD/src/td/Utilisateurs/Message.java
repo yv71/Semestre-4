@@ -49,4 +49,25 @@ public class Message {
         this.message += (char) codeAscii;
     }
     
+    public String getCharBinary(int i){
+        String rez = "";
+        String test = Integer.toBinaryString(this.getCharAscii(i));
+        if(test.length() < 8){
+            int nbZ = 8 - test.length();
+            for (int j=0; j < nbZ; j ++){
+                rez += "0";
+            }
+        }
+        rez += test;        
+        return rez;
+    }
+    
+    public String toBinaryString(){
+        String rez = "";
+        for (int i = 0; i < this.taille(); i ++){
+            rez += this.getCharBinary(i)+ " ";
+        }
+        return rez;
+    }
+    
 }
