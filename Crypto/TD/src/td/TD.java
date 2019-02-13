@@ -29,6 +29,7 @@ public class TD {
         Message m = new Message("BONJOURCOMMENTCAVA");
         ArrayList<String> c = new ArrayList();
         c.add("alea");
-        test.crypter(m, c);
+        Message d = test.crypter(m, c);
+        test.decrypter(d, c);
     }
 }

@@ -28,7 +28,7 @@ public class Algo_Transposition implements Algorithme{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private char[][] initTab(Message _message, String cle){
+    private char[][] initTabCrypt(Message _message, String cle){
         int nbLignes = _message.taille()/cle.length();
         int nbColonnes = cle.length();
         if(_message.taille()%cle.length() != 0){
@@ -52,6 +52,34 @@ public class Algo_Transposition implements Algorithme{
         return rez;
     }
     
+    private ArrayList<Pair> getPairDecrypt(String cle){
+        String motCle = cle.toLowerCase().replaceAll("\\s+","");   
+        ArrayList<Pair> cc = this.createPair(motCle);
+        ArrayList<Pair> wrong = new ArrayList();
+        for(int i = 0; i < motCle.length();i++){
+            wrong.add(new Pair(motCle.charAt(i), i +1));
+        }
+        
+        
+
+    }
+    private char[][] initTabDecrypt(Message _message, String cle){
+        _message.removeSpace();
+        String motCle = cle.toLowerCase().replaceAll("\\s+","");
+        ArrayList<Pair> listePair = this.createPair(motCle);
+        int nbLignes = _message.taille()/cle.length();
+        int nbColonnes = cle.length();
+        char[][] rez = new char[nbLignes][nbColonnes];
+        int nb = 0;
+        for(int i=0;i<nbColonnes;i++){
+            for(int j=0;j<nbLignes;j++){
+                rez[j][i]=(char)_message.getCharAscii(nb);
+                nb++;              
+            }
+        }
+        return rez;
+    }
+    
     private ArrayList<Pair> createPair(String cle){
         Comparateur comp = new Comparateur();
         ArrayList<Pair> rez = new ArrayList();
@@ -67,7 +95,7 @@ public class Algo_Transposition implements Algorithme{
         Message rez = new Message();
         String motCle = cle.get(0);
         motCle = motCle.toLowerCase().replaceAll("\\s+","");
-        char[][] tableauChaine = this.initTab(_message, motCle);
+        char[][] tableauChaine = this.initTabCrypt(_message, motCle);
         ArrayList<Pair> aled = this.createPair(motCle);
         int nb = 0;
         for(Pair p :aled){
@@ -90,7 +118,20 @@ public class Algo_Transposition implements Algorithme{
         Message rez = new Message();
         String motCle = cle.get(0);
         motCle = motCle.toLowerCase().replaceAll("\\s+","");
-        
+        ArrayList<Pair> aled = this.createPair(motCle);
+        char[][] tableauChaine = this.initTabDecrypt(_message, motCle);
+        int nb = 0;
+        for(Pair p :aled){
+            int nColonne = p.getNb()-1;
+            for(int i = 0; i < tableauChaine.length; i++){
+                rez.addCharAscii((int) tableauChaine[i][nColonne]);
+                nb++;
+                if(nb == 5){
+                    rez.addCharAscii((int) ' ');
+                }
+                nb = nb%5;
+            }
+        }
         return rez;
     }
     

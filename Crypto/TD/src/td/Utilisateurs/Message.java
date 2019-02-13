@@ -70,4 +70,8 @@ public class Message {
         return rez;
     }
     
+    
+    public void removeSpace(){
+        this.message= this.message.replaceAll("\\s+","");
+    }
 }
