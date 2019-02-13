@@ -1,0 +1,106 @@
+﻿body {
+
+	width: 100vw;
+	height: 100vh;
+
+	margin: 0;
+	font-family: 'Segoe UI';
+
+	display: flex;
+	flex-direction: column;
+
+	background-image: url(../img/background.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+
+	color: #FFF;
+}
+
+h1, h2
+{
+	text-align: center;
+}
+
+input
+{
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+    input[type="text"], input[type="number"] {
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid #FFF;
+        border-radius: 5px;
+    }
+
+input[type="button"]
+{
+	background-color: #333;
+	border-radius: 5px;
+	border: 1px solid #222;
+	color: #FFF;
+	cursor: pointer;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8);
+}
+
+content
+{
+	height: 100%;
+
+	display: flex;
+	flex-direction: row;
+}
+
+list
+{
+	min-width: 300px;
+	margin: 0 10px 10px 10px;
+
+	border: 1px solid #AAA;
+	box-sizing: border-box;
+
+	overflow-y: auto;
+}
+
+list .game
+{
+	padding: 10px;
+	box-sizing: border-box;
+
+	cursor: pointer;
+}
+
+list .game p
+{
+	margin: 0;
+}
+
+list .game .title
+{
+	font-weight: bold;
+}
+
+list .game .info
+{
+	font-style: italic;
+}
+
+list .game.selected
+{
+	background-color: rgba(255, 255, 255, 0.2);
+	color: #FFF;
+}
+
+gameinfo
+{
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+#buttons
+{
+	text-align: center;
+}

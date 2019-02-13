@@ -22,10 +22,13 @@ public class TD {
     public static void main(String[] args) {
         //Module cesar = new Module_Cesar("Bonjour messieurs, comment se passe votre soiree ? B/D/P");
         //cesar.Start();
-        Module vigenere = new Module_Vigenere("IUTDIJON");
-        vigenere.Start();
+        //Module vigenere = new Module_Vigenere("IUTDIJON");
+        //vigenere.Start();
         
-        Message m = new Message("XXXX");
-        System.out.println(m.toBinaryString());
+        Algo_Transposition test = new Algo_Transposition();
+        Message m = new Message("BONJOURCOMMENTCAVA");
+        ArrayList<String> c = new ArrayList();
+        c.add("alea");
+        test.crypter(m, c);
     }
 }

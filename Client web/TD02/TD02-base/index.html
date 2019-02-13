@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>M4103/AT2 - TD2</title>
+  <meta charset="utf-8" />
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1>M4103/AT2</h1>
+        <h2>TD2 - MVC</h2>
+    </header>
+
+    <content>
+        <list></list>
+
+        <gameinfo>
+            <input type="hidden" id="txt-id" />
+            <p>Titre du jeu<br /><input type="text" id="txt-title" /></p>
+            <p>Date de sortie<br /><input type="number" id="txt-release-year" /></p>
+            <p id="buttons">
+                <input type="button" id="btn-add" value="Ajouter" />
+                <input type="button" id="btn-update" value="Modifier" />
+                <input type="button" id="btn-remove" value="Supprimer" />
+            </p>
+        </gameinfo>
+    </content>
+    <script src="libs/jquery-3.1.1.min.js"></script>
+    <script src="js/models/observer.js"></script>
+    <script src="js/models/subject.js"></script>
+    <script src="js/models/collection.js"></script>
+    <script src="js/application/application.js"></script>
+    <script src="js/application/controller.js"></script>
+    <script src="js/application/view.js"></script>
+    <script src="js/models/game.js"></script>
+    <script src="js/models/games.js"></script>
+</body>
+</html>
