@@ -59,7 +59,7 @@ public class Algo_Transposition implements Algorithme{
         for(int i = 0; i < motCle.length();i++){
             wrong.add(new Pair(motCle.charAt(i), i +1));
         }
-        
+        return cc;
         
 
     }

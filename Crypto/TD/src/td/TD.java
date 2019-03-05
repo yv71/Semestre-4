@@ -25,11 +25,17 @@ public class TD {
         //Module vigenere = new Module_Vigenere("IUTDIJON");
         //vigenere.Start();
         
-        Algo_Transposition test = new Algo_Transposition();
-        Message m = new Message("BONJOURCOMMENTCAVA");
-        ArrayList<String> c = new ArrayList();
-        c.add("alea");
-        Message d = test.crypter(m, c);
-        test.decrypter(d, c);
+
+        ArrayList<String> cle = new ArrayList();
+        cle.add("alea");
+        Message _message = new Message();
+        /*Message d = test.crypter(m, c);
+        test.decrypter(d, c);**/
+        
+        //Module_MasqueBinaire mb = new Module_MasqueBinaire();
+        //mb.Start();
+        
+        Algo_RSA a = new Algo_RSA();
+        a.crypter(_message, cle);
     }
 }

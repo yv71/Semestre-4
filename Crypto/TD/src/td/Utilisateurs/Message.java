@@ -65,13 +65,26 @@ public class Message {
     public String toBinaryString(){
         String rez = "";
         for (int i = 0; i < this.taille(); i ++){
-            rez += this.getCharBinary(i)+ " ";
+            rez += this.getCharBinary(i);
         }
         return rez;
     }
     
+    public void addCharBinary(String b){
+        int total =0;
+        int puissance = 1;
+        int i =7;
+        while(puissance <= 128)
+        {
+            total += puissance*Integer.valueOf(""+b.charAt(i));
+            puissance *= 2;
+            i--;
+        } 
+        this.addCharAscii(total);
+    }
     
     public void removeSpace(){
         this.message= this.message.replaceAll("\\s+","");
     }
+    
 }
