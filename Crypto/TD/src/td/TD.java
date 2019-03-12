@@ -28,14 +28,14 @@ public class TD {
 
         ArrayList<String> cle = new ArrayList();
         cle.add("alea");
-        Message _message = new Message();
+        Message _message = new Message("Coucou");
         /*Message d = test.crypter(m, c);
         test.decrypter(d, c);**/
         
         //Module_MasqueBinaire mb = new Module_MasqueBinaire();
         //mb.Start();
         
-        Algo_RSA a = new Algo_RSA();
-        a.crypter(_message, cle);
+        Module_RSA rsa = new Module_RSA();
+        rsa.Start();
     }
 }

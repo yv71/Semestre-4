@@ -5,6 +5,11 @@
  */
 package td.Modules;
 
+import java.util.ArrayList;
+import td.Algo.Algo_RSA;
+import td.Algo.Algorithme;
+import td.Utilisateurs.Message;
+
 /**
  *
  * @author yv066840
@@ -13,7 +18,15 @@ public class Module_RSA implements Module{
 
     @Override
     public void Start() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Algorithme s = new Algo_RSA();
+        Message _message = new Message("Coucou");
+        ArrayList<String> clePublique = s.genererClePublique();
+        ArrayList<String> clePrivee = s.genererClePrivee();
+        Message crypt = s.crypter(_message, clePublique);
+        Message aled = s.decrypter(crypt, clePrivee);
+        System.out.println(_message);
+        System.out.println(crypt);
+        System.out.println(aled);
     }
     
 }

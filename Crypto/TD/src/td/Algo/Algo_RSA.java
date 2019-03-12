@@ -15,10 +15,11 @@ import td.Utilisateurs.Message;
  * @author yv066840
  */
 public class Algo_RSA implements Algorithme{
-
+    private int P;
+    private int Q;
+    
     private int puissance_modulo(int a, int b, int n)
-    {      
-       
+    {            
         int rez;
         for(rez = 1; b > 0; b = b/2){
             if( b % 2 != 0){
@@ -32,21 +33,43 @@ public class Algo_RSA implements Algorithme{
     
     @Override
     public ArrayList<String> genererClePublique() {
-        int P = this.premier();
-        int Q = this.premier();
-        
+        ArrayList<String> rez = new ArrayList();
+        P =this.premier();
+        Q = this.premier();
+        int N = P*Q;
+        boolean test = true;
+        int e = 0;
+        int phi = (P-1)*(Q-1);
+        while(test){
+            e = this.premier();
+            if(this.pgcd(e,phi) == 1){
+                test = false;
+            }
+        }
+        rez.add(String.valueOf(N));
+        rez.add(String.valueOf(e));
+        return rez;
     }
-
+    
+    @Override
+    public ArrayList<String> genererClePrivee() {
+        ArrayList<String> rez = new ArrayList();
+        ArrayList<String> trucs = this.genererClePublique();
+        int phi = (P-1)*(Q-1);
+        rez.add(String.valueOf(this.inverse_modulo(Integer.parseInt(trucs.get(1)), phi)));
+        return rez;
+    }
     private int premier(){
         int rez;
         Random r = new Random();
         int nb = 0;
-        while(nb%2 == 0){
-            nb = r.nextInt(50) + 50;
+        nb = r.nextInt((int) Math.pow(2,10))+(int) Math.pow(2,10);        
+        if(nb%2 == 0){
+            nb = nb+1;
         }
         boolean ok = false;
         while(!ok){
-            if (this.millerRabin(nb, 50)){
+            if (this.millerRabin(nb, 30)){
                 ok = true;
             }
             else{
@@ -55,24 +78,37 @@ public class Algo_RSA implements Algorithme{
         }        
         return nb;
     }
-    
-    
-    @Override
-    public ArrayList<String> genererClePrivee() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     @Override
     public Message crypter(Message _message, ArrayList<String> cle) {
-        Message m = null;
-        this.temoin(0,5);
-        System.out.println(this.premier());
+        Message m = new Message();
+        int chara;
+        
+        for(int i =0; i<_message.taille();i++)
+        {
+            chara =(int) _message.getCharAscii(i);
+            int e = Integer.parseInt(cle.get(1));
+            int n = Integer.parseInt(cle.get(0));
+            m.addCharAscii(this.puissance_modulo(chara, e, n));
+        }
         return m;
     }
 
     @Override
     public Message decrypter(Message _message, ArrayList<String> cle) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Message rez = new Message();
+        int chara;
+        String chaine = "";
+        for(int i =0; i<_message.taille();i++)
+        {
+            chaine += (char) _message.getCharAscii(i);
+            rez.a
+            /*int d = Integer.parseInt(cle.get(0));
+            int n = P * Q;
+            rez.addCharAscii(this.puissance_modulo(chara, d, n));*/
+        }
+        System.out.println(chaine);
+        return rez;
     }
     
     
@@ -115,8 +151,25 @@ public class Algo_RSA implements Algorithme{
                 return false;
             }
         }
+        
         return true;
     }
+    
+    int pgcd (int a , int b) { 
+        int t;
+        if ( b>a) { 
+                t = a; 
+                a = b; 
+                b = t; 
+         } 
+        int r;
+        do { 
+                r = a % b; 
+                a = b; 
+                b = r; 
+        } while(r !=0); 
+       return a ; 
+      }
     
     private int calculerS(int n){
         int s = 0;
